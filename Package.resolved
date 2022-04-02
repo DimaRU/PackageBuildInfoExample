@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "packagebuildinfo",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DimaRU/PackageBuildInfo",
+      "state" : {
+        "branch" : "master",
+        "revision" : "32e8e4a88539c445715062e39510729a27a490be"
+      }
+    }
+  ],
+  "version" : 2
+}
