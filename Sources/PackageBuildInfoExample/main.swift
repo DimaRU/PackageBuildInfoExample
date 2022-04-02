@@ -1,9 +1,14 @@
+/////
+////  main.swift
+///   Copyright © 2022 Dmitriy Borovikov. All rights reserved.
+//
+
 import Foundation
 
 let buildInfo = PackageBuildInfo.current
 print("Package build info:")
 guard !buildInfo.isDirty else {
-    print("Dirty build")
+    print("Dirty build (Have uncommitted changes)")
     exit(0)
 }
 let dateFormater = DateFormatter()
