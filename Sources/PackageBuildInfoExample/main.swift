@@ -5,23 +5,24 @@
 
 import Foundation
 
-let buildInfo = PackageBuildInfo.current
+print(PackageBuild.info.describe)
+let info = PackageBuild.info
 print("Package build info:")
-guard !buildInfo.isDirty else {
-    print("Dirty build (Have uncommitted changes)")
-    exit(0)
-}
 let dateFormater = DateFormatter()
-dateFormater.timeZone = PackageBuildInfo.current.timeZone
+dateFormater.timeZone = PackageBuild.info.timeZone
 dateFormater.dateStyle = .short
 dateFormater.timeStyle = .short
-let timeString = dateFormater.string(from: buildInfo.timeStamp)
+let timeString = dateFormater.string(from: info.timeStamp)
 
-let info = """
-Time:      \(timeString)
-Commit no: \(buildInfo.count!)
-Branch:    \(buildInfo.branch!)
-Tag:       \(buildInfo.tag ?? "")
-ID:        \(buildInfo.commit)
+let detail = """
+Time:          \(timeString)
+Branch:        \(info.branch!)
+Tag:           \(info.tag ?? "")
+Commit count:  \(info.count)
+Commits since: \(info.countSince)
+ID:            \(info.commit)
 """
-print(info)
+print(detail)
+if info.isDirty {
+    print("Dirty build (have uncommitted changes)")
+}
