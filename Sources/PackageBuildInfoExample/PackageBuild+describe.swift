@@ -1,8 +1,6 @@
-//
-//  PackageBuild+describe.swift
-//  
-//
-//  Created by Dmitriy Borovikov on 06.05.2022.
+/////
+////  PackageBuild+describe.swift
+///   Copyright © 2022 Dmitriy Borovikov. All rights reserved.
 //
 
 import Foundation

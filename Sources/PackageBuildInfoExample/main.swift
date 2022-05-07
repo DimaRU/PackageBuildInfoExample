@@ -5,7 +5,7 @@
 
 import Foundation
 
-print(PackageBuild.info.describe)
+print("Build:", PackageBuild.info.describe)
 let info = PackageBuild.info
 print("Package build info:")
 let dateFormater = DateFormatter()
