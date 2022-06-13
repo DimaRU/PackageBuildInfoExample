@@ -15,12 +15,12 @@ dateFormater.timeStyle = .short
 let timeString = dateFormater.string(from: info.timeStamp)
 
 let detail = """
-Time:          \(timeString)
-Branch:        \(info.branch!)
-Tag:           \(info.tag ?? "")
-Commit count:  \(info.count)
-Commits since: \(info.countSince)
-ID:            \(info.commit)
+Time:              \(timeString)
+Branch:            \(info.branch!)
+Tag:               \(info.tag ?? "")
+Commit count:      \(info.count)
+Commits since tag: \(info.countSinceTag)
+ID:                \(info.commit)
 """
 print(detail)
 if info.isDirty {

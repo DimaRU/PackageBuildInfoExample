@@ -4,15 +4,14 @@ import PackageDescription
 
 let package = Package(
     name: "PackageBuildInfoExample",
-    platforms: [.macOS(.v11)],
     dependencies: [
-        .package(url: "https://github.com/DimaRU/PackageBuildInfo", branch: "master")
+        .package(url: "https://github.com/DimaRU/PackageBuildInfo", exact: "1.0.0")
     ],
     targets: [
         .executableTarget(
             name: "PackageBuildInfoExample",
             plugins: [
-                .plugin(name: "packageBuildInfoPlugin", package: "PackageBuildInfo")
+                .plugin(name: "PackageBuildInfoPlugin", package: "PackageBuildInfo")
             ]),
     ]
 )

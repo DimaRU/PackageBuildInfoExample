@@ -15,8 +15,8 @@ extension PackageBuild {
             return String(commit.prefix(8))
         }
         var desc = tag!
-        if countSince != 0 {
-            desc += "-" + String(countSince) + "-g" + commit.prefix(7)
+        if countSinceTag != 0 {
+            desc += "-" + String(countSinceTag) + "-g" + commit.prefix(7)
         }
         if isDirty {
             desc += "-dirty"

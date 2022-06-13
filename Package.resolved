@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DimaRU/PackageBuildInfo",
       "state" : {
-        "branch" : "master",
-        "revision" : "a9f19244b36445824345d516108b0dbb5b3c40f4"
+        "revision" : "f48e26fac7a4aa147428795d53e8bc02299f0c61",
+        "version" : "1.0.0"
       }
     }
   ],
