@@ -11,33 +11,18 @@ Wouldn't it be great if your Swift Package-based projects just take their versio
 
 Using a new amazing feature - Swift Package Manager prebuild plugin, you can generate .swift file with current build info from git. It will never modify your local project.
 
+
+## Plugin documentation: 
+
+[https://github.com/DimaRU/PackageBuildInfo](https://github.com/DimaRU/PackageBuildInfo)
+
 ## Requirements
 
 * SwiftPM 5.6 or later.
 * git
-
-## Prerequisite
-
-##### Install PackageBuildInfo tool:
-
-* Using the [Mint](https://github.com/yonaskolb/Mint):
-
-```bash
-mint install DimaRU/PackageBuildInfo
-```
-
-* or build manually:
-
-```bash
-git clone https://github.com/DimaRU/PackageBuildInfo
-cd PackageBuildInfo
-swift build -c release
-cp .build/release/packageBuildInfo /usr/local/bin
-```
+* bash
 
 ## Build and run
-
-* Add to package dependencies:
 
 ```bash
 git clone https://github.com/DimaRU/PackageBuildInfoExample
@@ -61,7 +46,7 @@ public struct PackageBuild {
     let timeZone: TimeZone  // Time Zone
     let count: Int          // Total commit count
     let tag: String?        // Tag, if exist
-    let countSince: Int     // Commit count since tag
+    let countSinceTag: Int  // Commit count since tag
     let branch: String?     // Git branch name
     let digest: [UInt8]     // Latest commit sha1 digest (20 bytes)
 
@@ -70,14 +55,13 @@ public struct PackageBuild {
     }
     static let info = PackageBuild(
                               isDirty: false,
-                              timeStamp: Date(timeIntervalSince1970: 1651860865),
-                              timeZone: TimeZone(secondsFromGMT: 10800)!,
-                              count: 4,
-                              tag: "0.0.1",
-                              countSince: 3,
+                              timeStamp: Date(timeIntervalSince1970: 1651955365),
+                              timeZone: TimeZone(secondsFromGMT: 10800) ?? TimeZone.current,
+                              count: 6,
+                              tag: "1.0.0",
+                              countSinceTag: 2,
                               branch: "master",
-                              digest: [0xee, 0x53, 0x6a, 0x73, 0xff, 0xc6, 0x16, 0x76, 0x50, 0xe9, 
-                                       0x5e, 0x2c, 0xd2, 0xa8, 0xcb, 0x96, 0x38, 0x49, 0x15, 0xc7])
+                              digest: [0x72, 0x75, 0x92, 0xa4, 0x2d, 0xa7, 0x16, 0xb5, 0x9d, 0x2b, 0x0f, 0x06, 0x1d, 0xbc, 0x61, 0x4d, 0xc9, 0xa7, 0x58, 0x92])
 }
 ```
 
