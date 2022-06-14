@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "PackageBuildInfoExample",
     dependencies: [
-        .package(url: "https://github.com/DimaRU/PackageBuildInfo", exact: "1.0.0")
+        .package(url: "https://github.com/DimaRU/PackageBuildInfo", from: "1.0.0")
     ],
     targets: [
         .executableTarget(
